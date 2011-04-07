@@ -1,5 +1,22 @@
+h1. Overview
+
 Katharsis Framework is a lightweight open-source MVC-framework for PHP5.
 
 Its principles of project processing as well as its handling are based on the manners of Zend Framework, so it is the perfect tool for a programmer who is looking for a lightweight alternative to Zend Framework.
 
-Katharsis Framework is written in native, object-orientated PHP5 code only. It keeps things simple without bloating your project unnecessarily. 
+Katharsis Framework is written in native, object-orientated PHP5 code only. It keeps things simple without bloating your project unnecessarily.
+
+h1. List of Features
+
+# lightweight and fast processing
+# facilitates project maintenance by keeping your code clean
+# preserves a tidy project structure
+# provides great extensibility
+# easy-to-use plugin interface
+# supports "pretty URLs"
+# entirely object orientated
+
+h1. Requirements
+
+# PHP enabled web server
+# PHP v. 5.0 or greater
