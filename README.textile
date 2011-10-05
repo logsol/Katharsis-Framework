@@ -8,15 +8,15 @@ Katharsis Framework is written in native, object-orientated PHP5 code only. It k
 
 h1. List of Features
 
-# lightweight and fast processing
-# facilitates project maintenance by keeping your code clean
-# preserves a tidy project structure
-# provides great extensibility
-# easy-to-use plugin interface
-# supports "pretty URLs"
-# entirely object orientated
+* lightweight and fast processing
+* facilitates project maintenance by keeping your code clean
+* preserves a tidy project structure
+* provides great extensibility
+* easy-to-use plugin interface
+* supports "pretty URLs"
+* entirely object orientated
 
 h1. Requirements
 
-# PHP enabled web server
-# PHP v. 5.0 or greater
+* PHP enabled web server
+* PHP v. 5.0 or greater
