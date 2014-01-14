@@ -31,16 +31,16 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h2>
-<a name="1-download-and-unpack-" class="anchor" href="#1-download-and-unpack-"><span class="octicon octicon-link"></span></a>1. Download and Unpack </h2>
+        <h1>
+<a name="1-download-and-unpack" class="anchor" href="#1-download-and-unpack"><span class="octicon octicon-link"></span></a>1. Download and Unpack</h1>
 
-<p><a href="/web/20120120165340/http://katharsis-framework.de/download">Download</a> the latest version of Katharsis Framework and unpack it to
+<hr><p><a href="/web/20120120165340/http://katharsis-framework.de/download">Download</a> the latest version of Katharsis Framework and unpack it to
 your local php workspace. (XAMPP default folder: <em>htdocs</em>)</p>
 
-<h2>
-<a name="2-project-structure-" class="anchor" href="#2-project-structure-"><span class="octicon octicon-link"></span></a>2. Project Structure </h2>
+<h1>
+<a name="2-project-structure" class="anchor" href="#2-project-structure"><span class="octicon octicon-link"></span></a>2. Project Structure</h1>
 
-<p><img src="/web/20120120165340im_/http://katharsis-framework.de/img/howto/projectstructure.png" alt="Projectstructure Screenshot"></p>
+<hr><p><img src="/web/20120120165340im_/http://katharsis-framework.de/img/howto/projectstructure.png" alt="Projectstructure Screenshot"></p>
 
 <p>When you open the project directory you will see a project structure as
 per margin.</p>
@@ -99,12 +99,12 @@ your apache root directory of your domain or subdomain should point to
 this folder.</p>
 
 <p>Also you can see a <em>.htaccess</em> file as well as <em>index.php</em>. You will
-read about them in the chapter <a href="/web/20120120165340/http://katharsis-framework.de/howto#How_It_Works">How It Works</a>.</p>
+read about them in the chapter <a href="/web/20120120165340/http://katharsis-framework.de/howto#How_It_Works">How It Works</a>{#how-it-works}.</p>
 
-<h2>
-<a name="3-get-started" class="anchor" href="#3-get-started"><span class="octicon octicon-link"></span></a>3. Get Started</h2>
+<h1>
+<a name="3-get-started" class="anchor" href="#3-get-started"><span class="octicon octicon-link"></span></a>3. Get Started</h1>
 
-<h3>
+<hr><h3>
 <a name="controllers-and-actions" class="anchor" href="#controllers-and-actions"><span class="octicon octicon-link"></span></a>Controllers And Actions</h3>
 
 <p>In Katharsis projects the url are designed by the following scheme:</p>
@@ -144,10 +144,10 @@ this case <em>welcome.phtml</em></p>
 &lt;/p&gt;
 </code></pre>
 
-<h2>
-<a name="4-how-it-works-" class="anchor" href="#4-how-it-works-"><span class="octicon octicon-link"></span></a>4. How It Works </h2>
+<h1>
+<a name="4-how-it-works" class="anchor" href="#4-how-it-works"><span class="octicon octicon-link"></span></a>4. How It Works</h1>
 
-<p><img src="/web/20120120165340im_/http://katharsis-framework.de/img/howto/howitworks.jpg" alt="Flow process chart"></p>
+<hr><p><img src="/web/20120120165340im_/http://katharsis-framework.de/img/howto/howitworks.jpg" alt="Flow process chart"></p>
 
 <h3>
 <a name="htaccess" class="anchor" href="#htaccess"><span class="octicon octicon-link"></span></a>.htaccess</h3>
@@ -171,10 +171,10 @@ plugins and runs the bootstrap process.</p>
 <p>The heart of Katharsis. It processes the plugin interface and the
 controller routing.</p>
 
-<h2>
-<a name="5-mysql-database-connector-" class="anchor" href="#5-mysql-database-connector-"><span class="octicon octicon-link"></span></a>5. Mysql Database Connector </h2>
+<h1>
+<a name="5-mysql-database-connector" class="anchor" href="#5-mysql-database-connector"><span class="octicon octicon-link"></span></a>5. Mysql Database Connector</h1>
 
-<h3>
+<hr><h3>
 <a name="setting-up-databaseconfigini" class="anchor" href="#setting-up-databaseconfigini"><span class="octicon octicon-link"></span></a>Setting up database.config.ini</h3>
 
 <p>First thing to do if you want to use the Katharsis Mysql interface is to
@@ -244,10 +244,10 @@ $result = $this-&gt;_con-&gt;fetchAll($sql);
   analyseLast()                    Prints out detailled information about the last statement
   lastInsertId()                   Returns the value of one field</p>
 
-<h2>
-<a name="6-plugin-interface" class="anchor" href="#6-plugin-interface"><span class="octicon octicon-link"></span></a>6. Plugin Interface</h2>
+<h1>
+<a name="7-plugin-interface" class="anchor" href="#7-plugin-interface"><span class="octicon octicon-link"></span></a>7. Plugin Interface</h1>
 
-<p>With plugins it is possible to call methods before and/or after the
+<hr><p>With plugins it is possible to call methods before and/or after the
 controller is processed.</p>
 
 <h3>
@@ -305,7 +305,7 @@ try {
 <li> Controller -&gt; Action</li>
 <li> MyAccessPlugin -&gt; postController</li>
 <li> MyRenderPlugin -&gt; postController</li>
-</ol><p>Take a look at the diagram in the chapter <a href="/web/20120120165340/http://katharsis-framework.de/howto#How_It_Works">How It Works</a> for a better
+</ol><p>Take a look at the diagram in the chapter <a href="/web/20120120165340/http://katharsis-framework.de/howto#How_It_Works">How It Works</a>{#how-it-works} for a better
 understanding.</p>
 
 <h3>
