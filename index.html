@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Katharsis Framework : Katharsis Framework is a lightweight open-source MVC-framework for PHP5. " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Katharsis Framework</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/logsol/Katharsis-Framework">View on GitHub</a>
+
+          <h1 id="project_title">Katharsis Framework</h1>
+          <h2 id="project_tagline">Katharsis Framework is a lightweight open-source MVC-framework for PHP5. </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/logsol/Katharsis-Framework/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/logsol/Katharsis-Framework/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>
+<a name="1-download-and-unpack-" class="anchor" href="#1-download-and-unpack-"><span class="octicon octicon-link"></span></a>1. Download and Unpack </h2>
+
+<p><a href="/web/20120120165340/http://katharsis-framework.de/download">Download</a> the latest version of Katharsis Framework and unpack it to
+your local php workspace. (XAMPP default folder: <em>htdocs</em>)</p>
+
+<h2>
+<a name="2-project-structure-" class="anchor" href="#2-project-structure-"><span class="octicon octicon-link"></span></a>2. Project Structure </h2>
+
+<p><img src="/web/20120120165340im_/http://katharsis-framework.de/img/howto/projectstructure.png" alt="Projectstructure Screenshot"></p>
+
+<p>When you open the project directory you will see a project structure as
+per margin.</p>
+
+<h3>
+<a name="application" class="anchor" href="#application"><span class="octicon octicon-link"></span></a>application</h3>
+
+<p>In this directory you see three subdirectories: <em>controller</em>, <em>model</em>
+and <em>view</em> - these are the three parts of the <a href="/web/20120120165340/http://en.wikipedia.org/wiki/Model_View_Controller">MVC-Design-Pattern</a>.</p>
+
+<h3>
+<a name="controller" class="anchor" href="#controller"><span class="octicon octicon-link"></span></a>controller</h3>
+
+<p>With specifying several Controllers you arrange the different parts of
+your application into groups of methods, for example <em>access</em>,
+<em>administration</em>, <em>index</em>. These Controller classes contain several
+methods called <em>Actions</em>.</p>
+
+<h3>
+<a name="model" class="anchor" href="#model"><span class="octicon octicon-link"></span></a>model</h3>
+
+<p>Models are classes that cummunicate with any external data provider, for
+example a <em>mysql database</em>, a <em>xml-file</em> or a <em>webservice</em>. Models also
+process business logic.</p>
+
+<h3>
+<a name="view" class="anchor" href="#view"><span class="octicon octicon-link"></span></a>view</h3>
+
+<p>The view <em>.phtml</em> files are templates that determine what your different
+GUI pages contain and how they look like.</p>
+
+<h3>
+<a name="config" class="anchor" href="#config"><span class="octicon octicon-link"></span></a>config</h3>
+
+<p>Any configuration files for example the <em>database.config.ini</em>, that
+defines mysql database connection details.</p>
+
+<h3>
+<a name="library" class="anchor" href="#library"><span class="octicon octicon-link"></span></a>library</h3>
+
+<p>Store any external PHP classes and libraries, that you want to use in
+this directory. \
+ For example any additional parser classes, a template engine like
+<em>Smarty</em>, or even the whole <em>Zend</em> library.</p>
+
+<p>It contains the Katharsis library by default.</p>
+
+<h3>
+<a name="public" class="anchor" href="#public"><span class="octicon octicon-link"></span></a>public</h3>
+
+<p>Here you deposit all files that have to be called via web directly, like
+<em>images</em>, <em>stylesheets</em>, <em>javascripts</em> and so on.</p>
+
+<p>If possible, this should be the only public directory. That means that
+your apache root directory of your domain or subdomain should point to
+this folder.</p>
+
+<p>Also you can see a <em>.htaccess</em> file as well as <em>index.php</em>. You will
+read about them in the chapter <a href="/web/20120120165340/http://katharsis-framework.de/howto#How_It_Works">How It Works</a>.</p>
+
+<h2>
+<a name="3-get-started" class="anchor" href="#3-get-started"><span class="octicon octicon-link"></span></a>3. Get Started</h2>
+
+<h3>
+<a name="controllers-and-actions" class="anchor" href="#controllers-and-actions"><span class="octicon octicon-link"></span></a>Controllers And Actions</h3>
+
+<p>In Katharsis projects the url are designed by the following scheme:</p>
+
+<pre lang="code"><code>http://localhost/KatharsisExample/public/index/index
+</code></pre>
+
+<p>This will effect, that the indexAction in the IndexController is going
+to be called.</p>
+
+<h3>
+<a name="writing-controllers-and-templates" class="anchor" href="#writing-controllers-and-templates"><span class="octicon octicon-link"></span></a>Writing Controllers and Templates</h3>
+
+<p>If you open up the <em>IndexController.php</em> file you will see, that there
+is already a pretty basic example of a controller class. Take a look at
+the following lines:</p>
+
+<pre lang="code"><code>public function indexAction()
+{
+    $this-&gt;_view-&gt;someVariableName = 'Katharsis';
+
+    echo $this-&gt;_view-&gt;render('welcome');
+}
+</code></pre>
+
+<p>By assigning values to variables in the view, you can make dynamic data
+accessible in your templates, like in this example. The string
+<em>'Katharsis'</em> is being assigned to the view variable <em>someVariableName</em>.
+The render method renders your whished template and returns the result.
+Don't forget to <em>echo</em> it ;)</p>
+
+<p>Now you are able to access <em>someVariableName</em> in your template file. In
+this case <em>welcome.phtml</em></p>
+
+<pre lang="code"><code>&lt;p&gt;
+    This is an empty &lt;?=$this-&gt;someVariableName?&gt; project.
+&lt;/p&gt;
+</code></pre>
+
+<h2>
+<a name="4-how-it-works-" class="anchor" href="#4-how-it-works-"><span class="octicon octicon-link"></span></a>4. How It Works </h2>
+
+<p><img src="/web/20120120165340im_/http://katharsis-framework.de/img/howto/howitworks.jpg" alt="Flow process chart"></p>
+
+<h3>
+<a name="htaccess" class="anchor" href="#htaccess"><span class="octicon octicon-link"></span></a>.htaccess</h3>
+
+<p>The processing of every Katharsis project begins with the <em>.htaccess</em>
+file in the public folder. It makes shure, that every HTTP request will
+be rewritten to the public <em>index.php</em> file unless it is directed to a
+file that is actually existing in the public folder like images, script
+and style files.</p>
+
+<h3>
+<a name="public-indexphp" class="anchor" href="#public-indexphp"><span class="octicon octicon-link"></span></a>Public index.php</h3>
+
+<p>This is the beginning of the actual PHP processing of a Katharsis
+project. It initialises everything the framework needs, registers
+plugins and runs the bootstrap process.</p>
+
+<h3>
+<a name="bootstrap" class="anchor" href="#bootstrap"><span class="octicon octicon-link"></span></a>Bootstrap</h3>
+
+<p>The heart of Katharsis. It processes the plugin interface and the
+controller routing.</p>
+
+<h2>
+<a name="5-mysql-database-connector-" class="anchor" href="#5-mysql-database-connector-"><span class="octicon octicon-link"></span></a>5. Mysql Database Connector </h2>
+
+<h3>
+<a name="setting-up-databaseconfigini" class="anchor" href="#setting-up-databaseconfigini"><span class="octicon octicon-link"></span></a>Setting up database.config.ini</h3>
+
+<p>First thing to do if you want to use the Katharsis Mysql interface is to
+type in your database connections into the <em>config/database.config.ini</em>
+file. You will find a sample connection in there, that is commented out
+by semicolons.</p>
+
+<pre lang="code"><code>[connection:development:default]
+host = localhost
+user = root
+password = 
+database = myDatabaseName
+</code></pre>
+
+<p>It is possible to use multiple database connections as well. Just apply
+to the following scheme of ini section name:</p>
+
+<pre lang="code"><code>[connection:NameOfYourConnection]
+</code></pre>
+
+<p>If you want, you can add <em>:default</em> to your main connection.</p>
+
+<h3>
+<a name="connecting" class="anchor" href="#connecting"><span class="octicon octicon-link"></span></a>Connecting</h3>
+
+<p>Katharsis automatically connects to all connections that are typed into
+the config file.</p>
+
+<p>In all <em>controllers</em> and <em>model classes</em> you can access the default
+connection by using this:</p>
+
+<pre lang="code"><code>$this-&gt;_con
+</code></pre>
+
+<p>Otherwise you will have to connect like this:</p>
+
+<pre lang="code"><code>$con = Katharsis_DatabaseConnector::getConnection('NameOfYourConnection');
+</code></pre>
+
+<p>If you call <em>getConnection()</em> without a parameter, the default
+connection will be choosen.</p>
+
+<h3>
+<a name="executing-a-statement" class="anchor" href="#executing-a-statement"><span class="octicon octicon-link"></span></a>Executing a Statement</h3>
+
+<p>The most common way to execute a SQL statement:</p>
+
+<pre lang="code"><code>$sql = "SELECT id, name FROM table WHERE group = :mygroup AND category = :c";
+
+$values = array("mygroup" =&gt; 6, "category" =&gt; 'stuff');
+$sql = $this-&gt;_con-&gt;createStatement($sql, $values);
+
+$result = $this-&gt;_con-&gt;fetchAll($sql);
+</code></pre>
+
+<h3>
+<a name="important-database-methods" class="anchor" href="#important-database-methods"><span class="octicon octicon-link"></span></a>Important Database Methods</h3>
+
+<p>Method                           Description</p>
+
+<hr><p>createStatement($sql, $values)   Builds a clean SQL string
+  fetchAll(\$sql)                  Returns a multidimensional array result
+  fetchOne(\$sql)                  Returns one result row as a onedimensional array
+  fetchField(\$sql)                Returns the value of one field
+  insert($table, $values)          Inserts one row into a table
+  count(\$sql)                     Counts result rows
+  analyseLast()                    Prints out detailled information about the last statement
+  lastInsertId()                   Returns the value of one field</p>
+
+<h2>
+<a name="6-plugin-interface" class="anchor" href="#6-plugin-interface"><span class="octicon octicon-link"></span></a>6. Plugin Interface</h2>
+
+<p>With plugins it is possible to call methods before and/or after the
+controller is processed.</p>
+
+<h3>
+<a name="write-a-plugin" class="anchor" href="#write-a-plugin"><span class="octicon octicon-link"></span></a>Write a Plugin</h3>
+
+<pre lang="code"><code>class MyPlugin extends Katharsis_Controller_Plugin_Abstract
+{
+    public function preController()
+    {
+        // some actions
+    }
+
+    public function postController()
+    {
+        // some actions
+    }
+}
+</code></pre>
+
+<p>Take a look at the example above. Notice that your plugin has to extend
+the <em>Katharsis_Controller_Plugin_Abstract</em> class. You just need to
+overwrite the method <em>preController</em> and/or <em>postController</em> to get
+going.</p>
+
+<h3>
+<a name="register-plugins" class="anchor" href="#register-plugins"><span class="octicon octicon-link"></span></a>Register Plugins</h3>
+
+<p>It is important to register all plugins that you want to be called. Open
+the <em>public/index.php</em> file and place your plugin registrations in there
+like this:</p>
+
+<pre lang="code"><code>chdir('..');
+require_once('library/Katharsis/Bootstrap.php');
+Katharsis_Autoload::init();
+
+Katharsis_Controller_Plugin::registerPlugin(new MyAccessPlugin());
+Katharsis_Controller_Plugin::registerPlugin(new MyRenderPlugin());
+
+try {
+    Katharsis_Bootstrap::run();
+} catch(Exception $e)
+{
+    echo '&lt;h2&gt;Exception thrown&lt;/h2&gt;';
+    echo '&lt;h3&gt;' . $e-&gt;getMessage() . '&lt;/h3&gt;';
+    echo '&lt;pre&gt;';
+    print_r($e);
+}
+</code></pre>
+
+<p>Your plugins will be called in the same order as you register them:</p>
+
+<ol>
+<li> MyAccessPlugin -&gt; preController</li>
+<li> MyRenderPlugin -&gt; preController</li>
+<li> Controller -&gt; Action</li>
+<li> MyAccessPlugin -&gt; postController</li>
+<li> MyRenderPlugin -&gt; postController</li>
+</ol><p>Take a look at the diagram in the chapter <a href="/web/20120120165340/http://katharsis-framework.de/howto#How_It_Works">How It Works</a> for a better
+understanding.</p>
+
+<h3>
+<a name="request-manipulation" class="anchor" href="#request-manipulation"><span class="octicon octicon-link"></span></a>Request Manipulation</h3>
+
+<p>It is a usual method to manipulate the controller or action that is
+going to be called by using the <em>preController</em> plugin hook. You can use
+this for building an access control.</p>
+
+<pre lang="code"><code>class MyAccessPlugin extends Katharsis_Controller_Plugin_Abstract
+{
+    public function preController()
+    {
+        session_start();
+
+        if(Katharsis_Request::getControllerName() != 'access')
+        {
+            if($_SESSION['loggedIn'] != 'yes')
+            {
+                Katharsis_Request::setControllerName('access');
+                Katharsis_Request::setActionName('gate');
+            }
+        } 
+    }
+}
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Katharsis Framework maintained by <a href="https://github.com/logsol">logsol</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47116301-5");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
